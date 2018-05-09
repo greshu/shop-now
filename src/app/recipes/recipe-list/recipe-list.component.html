@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button type="button" class="btn btn-succes" [routerLink]="['/Recipes/new']">New Recipe</button>
+  </div>
+</div>
+<hr/>
+<div class="row">
+  <div class="col-xs-7">
+    <app-recipe-item *ngFor="let recipeVal of recipes" 
+    [recipe] = "recipeVal" (click)="onSelectItem(recipeVal)"></app-recipe-item>
+  </div>
+</div>
