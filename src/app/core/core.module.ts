@@ -9,6 +9,7 @@ import { AuthService } from "../auth/auth.service";
 import { AuthGuard } from "../auth/auth-guard.service";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptor } from "../auth/auth.interceptor";
+import { AuthResponseInterceptor } from "../auth/auth-response.interceptor";
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { AuthInterceptor } from "../auth/auth.interceptor";
         RecipeService,
         AuthService,
         AuthGuard,
-        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: AuthResponseInterceptor, multi: true }],
 })
 export class CoreModule {
 
