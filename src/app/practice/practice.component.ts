@@ -1,10 +1,11 @@
-import { Component, OnInit } from "@angular/core";
+import { Component,OnInit} from "@angular/core";
 import { FormGroup, FormControl, NgForm, Validators, FormArray } from "@angular/forms";
 import { Observable } from "rxjs/Observable";
 
 @Component({
     selector: 'app-practice',
     templateUrl: './practice.component.html'
+    
 })
 export class PracticeComponent implements OnInit {
     toggleUnless: boolean = false;
@@ -19,6 +20,10 @@ export class PracticeComponent implements OnInit {
 
     // async validator
     forbiddenEmail = ['test@test.com', 'reshu@test.com']
+
+    //animations
+    state = "normal";
+
     ngOnInit() {
         this.signUpForm = new FormGroup({
             'username': new FormControl(null, [Validators.required, this.validateUserName.bind(this)]),

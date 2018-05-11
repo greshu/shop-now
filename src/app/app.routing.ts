@@ -4,6 +4,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router'
 import { PracticeComponent } from "./practice/practice.component";
 import { AuthGuard } from "./auth/auth-guard.service";
 import { HomeComponent } from "./core/home/home.component";
+import { PracticeAnimationComponent } from "./practice-animation/practice-animation.component";
 
 
 const appRoutes: Routes = [{
@@ -11,7 +12,9 @@ const appRoutes: Routes = [{
     path: '', component: HomeComponent
 },
 {path: 'Recipes', loadChildren:'./recipes/recipes.module#RecipesModule'},
-{ path: 'Practice', component: PracticeComponent, canActivate: [AuthGuard] }]
+{ path: 'Practice', component: PracticeComponent, canActivate: [AuthGuard] },
+{ path: 'Animations', component: PracticeAnimationComponent }
+]
 
 @NgModule({
     imports: [

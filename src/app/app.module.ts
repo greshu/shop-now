@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 
@@ -11,16 +12,19 @@ import { DirectivesModule } from './directives/directives.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { Authmodule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
+import { PracticeAnimationComponent } from './practice-animation/practice-animation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PracticeComponent,
-    ReversePipe
+    ReversePipe,
+    PracticeAnimationComponent
    
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     CoreModule,
